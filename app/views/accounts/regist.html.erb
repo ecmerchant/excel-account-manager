@@ -1,0 +1,15 @@
+<h1>アカウント情報の登録</h1>
+<br>
+<%= form_tag(controller: "accounts", action: "regist") do %>
+  <p>アカウント名：</p><%= text_field_tag("account") %>
+  <p>パスワード：</p><%= text_field_tag("password") %>
+  <%= submit_tag("Send") %>
+<% end %>
+
+<br>
+<%= link_to 'アカウントの更新', {action:"update"} %>
+<br>
+<br>
+<p>登録情報</p>
+<%= @data %>
+<br>

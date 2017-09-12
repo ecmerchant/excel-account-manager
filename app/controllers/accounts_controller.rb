@@ -17,6 +17,25 @@ class AccountsController < ApplicationController
         end
       end
     end
-
   end
+
+  def regist
+    if request.post? then
+      account = params[:account]
+      pass = params[:password]
+      Account.create(user:account, pass:pass,availability:true)
+    end
+    @data = Account.find_by(user:'murakami').user
+  end
+
+  def update
+    if request.post? then
+      account = params[:account]
+      
+      @user = Account.find_by(user:account).user
+      @pass = Account.find_by(user:account).pass
+      @avail = Account.find_by(user:account).availability
+    end
+  end
+
 end
