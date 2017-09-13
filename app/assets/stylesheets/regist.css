@@ -1,0 +1,17 @@
+table {
+    width: "800";
+}
+
+table tr th,
+table tr td {
+    padding: 0 10px;
+    border: 1px solid #DDD;
+    vertical-align: middle;
+    width: "400";
+}
+
+table tr th {
+    text-align: center;
+    font-weight: bold;
+    width: "400";
+}

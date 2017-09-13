@@ -1,5 +1,10 @@
-<h1>Accounts#manage</h1>
-<p>Find me in app/views/accounts/manage.html.erb</p>
-<p>user:<%= @user %></p>
-<p>pass:<%= @pass %></p>
+<h1>アカウント管理ツール</h1>
+<p>エクセルツールのアカウントを管理</p>
 <br>
+<%= link_to '新規アカウントの登録', accounts_regist_path %>
+<br>
+<br>
+<%= link_to '既存アカウントの更新', accounts_update_path %>
+<br>
+<br>
+<%= link_to '登録アカウントの確認', accounts_list_path %>
