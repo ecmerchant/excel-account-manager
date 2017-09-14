@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
     pa = Account.find_by(user:tuser)
     if pa.nil?
     else
-      if pa.availability == false then
+      if pa.availability == true then
         @user = 'OK'
         if pa.pass == tpass
           @pass = 'OK'
