@@ -9,6 +9,8 @@
   <%= submit_tag("検索") %>
 <% end %>
 <br>
+<%= @msg %>
+<br>
 <p>登録情報の更新</p>
 <%= form_tag(controller: "accounts", action: "update") do %>
 <table>

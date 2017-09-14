@@ -10,13 +10,14 @@
 <br>
 <table>
   <tr>
-    <th>アカウント</th><th>パスワード</th><th>有効性</th>
+    <th>アカウント</th><th>パスワード</th><th>有効性</th><th>アクション</th>
   </tr>
   <% @data.each do |obj| %>
   <tr>
     <td><%= obj.user %></td>
     <td><%= obj.pass %></td>
     <td><%= obj.availability %></td>
+    <td><%= link_to '削除', controller:'accounts',action:'delete', :account => obj.user %></td>
   </tr>
   <% end %>
 </table>

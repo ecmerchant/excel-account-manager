@@ -44,7 +44,17 @@ class AccountsController < ApplicationController
       pass = params[:password]
       Account.create(user:account, pass:pass,availability:true)
     end
-    @data = Account.find_by(user:'murakami').user
+  end
+
+  def delete
+    if request.get? then
+      account = params[:account]
+      if account != nil then
+        ac = Account.find_by(user:account)
+        ac.destroy
+      end
+    end
+    redirect_to '/accounts/list'
   end
 
   def update
@@ -52,10 +62,14 @@ class AccountsController < ApplicationController
       if params[:commit] == "検索" then
         if params[:account] != "" then
           account = params[:account]
-
-          @user = Account.find_by(user:account).user
-          @pass = Account.find_by(user:account).pass
-          @avail = Account.find_by(user:account).availability
+          if Account.find_by(user:account) != nil then
+            @user = Account.find_by(user:account).user
+            @pass = Account.find_by(user:account).pass
+            @avail = Account.find_by(user:account).availability
+            @msg = 'ヒットしました'
+          else
+            @msg = '該当のアカウントはありません'
+          end
         end
       else
         if params[:commit] == "更新" then

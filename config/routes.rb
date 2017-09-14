@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   post 'accounts/manage'
 
+  get 'accounts/delete/:account', to: 'accounts#delete'
+  post 'accounts/delete'
+
   get 'accounts/check'
   get 'accounts/check/:user/:pass' =>'accounts#check'
 
